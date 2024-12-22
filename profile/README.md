@@ -157,7 +157,7 @@ SW사관학교 정글9기 나만의 무기 만들기 섹션에서 만든 티켓 
 ## <span id="6">6. 💻 주요 기능 소개</span>
 
 <details>
-<summary> 공연 등록 </summary>
+<summary><span style="font-size: 1.2em; font-weight: bold">공연 등록</span></summary>
 
 <div>
 
@@ -166,21 +166,85 @@ SW사관학교 정글9기 나만의 무기 만들기 섹션에서 만든 티켓 
 </div>
 </details>
 
-### 구역 설정
+<details>
+<summary><span style="font-size: 1.2em; font-weight: bold">구역 설정</span></summary>
 
-<img src="/images/02구역설정.gif" alt="-화면" width="720" height="480">
+<div>
 
-### 2) 게시글
+<img src="/images/02구역설정.gif" alt="구역설정" width="720" height="480">
 
-| 상세페이지 화면                                   | 게시물 작성 - ??                                  | 게시물 작성 - ??                                  |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| <img src="" alt="-화면" width="720" height="608"> | <img src="" alt="-화면" width="288" height="608"> | <img src="" alt="-화면" width="288" height="608"> |
+</div>
+</details>
 
-### 3) 404 & 로딩 화면
+<details>
+<summary><span style="font-size: 1.2em; font-weight: bold">대기열</span></summary>
 
-| - 화면                                            | - 화면                                            | - 화면                                            |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| <img src="" alt="-화면" width="288" height="608"> | <img src="" alt="-화면" width="288" height="608"> | <img src="" alt="-화면" width="288" height="608"> |
+<div>
+
+<img src="/images/03대기열.gif" alt="대기열" width="720" height="480">
+
+</div>
+</details>
+
+<details>
+<summary><span style="font-size: 1.2em; font-weight: bold">구역 그라데이션</span></summary>
+
+<div>
+
+<img src="/images/04그라데이션.gif" alt="그라데이션" width="720" height="480">
+
+</div>
+</details>
+
+<details>
+<summary><span style="font-size: 1.2em; font-weight: bold">실시간 렌더링</span></summary>
+
+<div>
+
+<img src="/images/05실시간렌더링.gif" alt="실시간렌더링" width="720" height="480">
+
+</div>
+</details>
+
+<details>
+<summary><span style="font-size: 1.2em; font-weight: bold">함께 예매하기</span></summary>
+
+<div>
+
+<img src="/images/06연석.gif" alt="연석" width="720" height="480">
+
+</div>
+</details>
+
+<details>
+<summary><span style="font-size: 1.2em; font-weight: bold">결제</span></summary>
+
+<div>
+
+<img src="/images/07결제.gif" alt="결제" width="720" height="480">
+
+</div>
+</details>
+
+<details>
+<summary><span style="font-size: 1.2em; font-weight: bold">마이 페이지</span></summary>
+
+<div>
+
+<img src="/images/08마이페이지.gif" alt="마이페이지" width="720" height="480">
+
+</div>
+</details>
+
+<details>
+<summary><span style="font-size: 1.2em; font-weight: bold">관리자 페이지</span></summary>
+
+<div>
+
+<img src="/images/09관리자페이지.gif" alt="관리자페이지" width="720" height="480">
+
+</div>
+</details>
 
 <br>
 
