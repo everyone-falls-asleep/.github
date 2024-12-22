@@ -6,7 +6,7 @@
 
 🔗 [배포 링크](https://socketing.hjyoon.me/)
 
-<img src="" alt="intro title image"/>
+<img src="/images/메인.png" alt="메인" width="720" height="480">
 
 </div>
 
@@ -36,7 +36,7 @@ SW사관학교 정글9기 나만의 무기 만들기 섹션에서 만든 티켓 
 
 저희 팀은 평소 티켓팅을 하며 많은 불편함을 느꼈고 그 중에서도 빈 자리로 표시 됐음에도  
 "이미 다른 고객님께서 선택한 자리입니다" 라고 나오는 문제를 해결해보자는 생각으로 주제 선정을 진행하였습니다.
-<img src="/images/이선좌.jpg" width="500px;" alt="이선좌"/>
+<img src="/images/이선좌.gif" width="500px;" alt="이선좌"/>
 
 ### 개발 계획
 
