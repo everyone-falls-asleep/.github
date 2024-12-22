@@ -1,30 +1,10 @@
-# 소켓팅 정리해보자
-
-프로젝트 소개 - 팀원소개, 주제선정 배경, mvp, 유저테스트 얘기
-
-실시간 렌더링 개발 얘기 (소켓)
-
-좌석 상태를 db 에 저장할 필요가 있을까 에대한 의문, redis 사용
-
-왜 Postgres 를 사용했는지
-
-테스트에 대한 얘기
-
-테스트 시 문제점
-
-1. 동시 예매자 수가 늘어나면 응답 시간이 지나치게 늘어남
-2. 토큰 중복 발급, 메시지 누락
-
-아키텍처
-
 <div id="top"></div>
 
 <div align='center'>
 
-<h1><b>프로젝트 제목</b></h1>
-<h3><b>프로젝트 부제목</b></h3>
+<h1><b>티켓 예매 대행 서비스 : 소켓팅</b></h1>
 
-🔗 [배포 링크](https://)
+🔗 [배포 링크](https://socketing.hjyoon.me/)
 
 <img src="" alt="intro title image"/>
 
@@ -37,25 +17,28 @@
 1. [프로젝트 소개](#1)
 2. [팀원 소개](#2)
 3. [개발 일정](#3)
-4. [기술 스택](#4)
-5. [라이브러리 사용 이유](#5)
-6. [컨벤션](#6)
-7. [브랜치 및 디렉토리 구조](#7)
-8. [주요 기능 소개](#8)
-9. [상세 담당 업무](#9)
-10. [주요 코드 ](#10)
-11. [트러블 슈팅](#11)
-12. [프로젝트 회고](#12)
-13. [시작 가이드](#13)
+4. [아키텍처](#4)
+5. [유저 테스트](#5)
+6. [주요 기능 소개](#6)
+7. [상세 담당 업무](#7)
+8. [기술적 도전 및 이야기](#8)
+9. [앞으로 개선할 점](#9)
 
 <br />
 
 ## <span id="1">🚩 1. 프로젝트 소개</span>
 
-Notion: [프로젝트 노션 링크](https://)
+Youtube: [프로젝트 발표 영상](https://youtu.be/Kee5ar3oDZ4)
 
-프로젝트에 대한 전반적인 소개를 여기에 적어주세요.
+SW사관학교 정글9기 나만의 무기 만들기 섹션에서 만든 티켓 예매 대행 서비스 소켓팅(Socketing)입니다.
 
+### 주제 선정 이유
+
+저희 팀은 평소 티켓팅을 하며 많은 불편함을 느꼈고 그 중에서도 빈 자리로 표시 됐음에도  
+"이미 다른 고객님께서 선택한 자리입니다" 라고 나오는 문제를 해결해보자는 생각으로 주제 선정을 진행하였습니다.
+
+총 기간이 5주인 프로젝트였지만 3~4일 안에 1차 MVP를 개발하고 빠르게 피드백 & 유저테스트를 진행하여  
+그를 바탕으로 3~4일에 한번씩 MVP를 업데이트 하는 계획을 세웠고 5주간 6번의 유저테스트와 8번 업데이트 하여 8차 MVP로 마무리 했습니다.
 <br>
 
 <!-- Top Button -->
@@ -67,10 +50,9 @@ Notion: [프로젝트 노션 링크](https://)
 
 <div align="center">
 
-|                                                               [팀원1 이름](https://github.com/username1)                                                                |                                                               [팀원2 이름](https://github.com/username2)                                                                |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                              <img src="" width="120px;" alt="팀원1 사진"/>                                                              |                                                              <img src="" width="120px;" alt="팀원2 사진"/>                                                              |
-| <img src="https://img.shields.io/badge/기능1-FF5727" /> <img src="https://img.shields.io/badge/기능2-365486" /> <img src="https://img.shields.io/badge/기능3-609966" /> | <img src="https://img.shields.io/badge/기능1-FF5727" /> <img src="https://img.shields.io/badge/기능2-365486" /> <img src="https://img.shields.io/badge/기능3-609966" /> |
+|          [팀장 채동현](https://github.com/donghyun-chae)          |  [팀원2 이름](https://github.com/username2)   |
+| :---------------------------------------------------------------: | :-------------------------------------------: |
+| <img src="/images/donghyun.jpg" width="120px;" alt="팀원1 사진"/> | <img src="" width="120px;" alt="팀원2 사진"/> |
 
 </div>
 
@@ -83,7 +65,7 @@ Notion: [프로젝트 노션 링크](https://)
 
 ## <span id="3">📅 3. 개발 일정</span>
 
-> 프로젝트 개발 기간: 2024.00.00 ~ 2024.00.00
+> 프로젝트 개발 기간: 2024.11.10 ~ 2024.12.14
 
 <br>
 
@@ -92,35 +74,11 @@ Notion: [프로젝트 노션 링크](https://)
 
 <br>
 
-## <span id="4">📚 4. 기술 스택</span>
+## <span id="4">📚 4. 아키텍처</span>
 
-### Environment
+<img src="/images/arc.png" width="120px;" alt="아키텍처"/>
 
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-
-### Config
-
-![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)
-
-### Development
-
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white)![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
-
-### Project Management
-
-![Github Issues]() ![Github Pull requests]()
-
-### Design
-
-![Pigma]()
-
-### Hosting
-
-![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
-
-### Communication
-
-![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)![Discord](https://img.shields.io/badge/Discord-2D8CFF?style=for-the-badge&logo=Discord&logoColor=white)
+## <span id="5">❓ 5. 유저테스트</span>
 
 <br>
 
@@ -129,99 +87,7 @@ Notion: [프로젝트 노션 링크](https://)
 
 <br>
 
-## <span id="5">❓ 5. 라이브러리 사용 이유</span>
-
-각 라이브러리의 사용 이유를 설명해주세요.
-
-> React
-
-<br>
-
-> Redux
-
-<br>
-
-> Axios
-
-<br>
-
-> Styled-Components
-
-<br>
-
-<!-- Top Button -->
-<p style='background: black; width: 32px; height: 32px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-left: auto;'><a href="#top" style='color: white; '>▲</a></p>
-
-<br>
-
-## <span id="6">🤝 6. 컨벤션</span>
-
-### prettier
-
-```json
-{
-  "printWidth": 80,
-  "tabWidth": 2,
-  "singleQuote": true,
-  "trailingComma": "all",
-  "semi": false
-}
-```
-
-### 커밋 컨벤션
-
-```
-feat: 새로운 기능 추가
-fix: 버그 수정
-docs: 문서 수정
-style: 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
-refactor: 코드 리팩토링
-test: 테스트 추가, 테스트 리팩토링 (프로덕션 코드 변경 없음)
-chore: 빌드 업무 수정, 패키지 매니저 설정 수정 (프로덕션 코드 변경 없음)
-```
-
-<br>
-
-<!-- Top Button -->
-<p style='background: black; width: 32px; height: 32px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-left: auto;'><a href="#top" style='color: white; '>▲</a></p>
-
-<br>
-
-## 7.<span id="7"> 🗂️ 브랜치 및 디렉토리 구조</span>
-
-> 브랜치
-
-- `main`:
-- `dev`:
--
-
-<br>
-
-> 디렉토리 구조
-
-```
-.
-├── src
-│   ├── components
-│   ├── pages
-│   ├── redux
-│   ├── utils
-│   └── App.js
-├── public
-│   ├── index.html
-│   └── favicon.ico
-└── package.json
-
-```
-
-<br>
-
-<!-- Top Button -->
-<p style='background: black; width: 32px; height: 32px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-left: auto;'><a href="#top" style='color: white; '>▲</a></p>
-
-<br>
-
-## <span id="8">8. 💻 주요 기능 소개</span>
+## <span id="6">6. 💻 주요 기능 소개</span>
 
 프로젝트의 주요 기능을 GIF를 첨부하여 설명해주세요.
 
@@ -250,7 +116,7 @@ chore: 빌드 업무 수정, 패키지 매니저 설정 수정 (프로덕션 코
 
 <br>
 
-## <span id="9">9. 📄 상세 담당 업무</span>
+## <span id="7">7. 📄 상세 담당 업무</span>
 
 ### 1) 팀원1 이름
 
@@ -274,31 +140,6 @@ chore: 빌드 업무 수정, 패키지 매니저 설정 수정 (프로덕션 코
 - **♻️ 리팩토링**
   - 관련 설명
 
-### 2) 팀원2 이름
-
-- **🎨 디자인**
-
-  - 전체적인 UI 디자인
-
-- **💻 화면 개발**
-
-  - 공통 헤더 네브바
-  - 공통 푸터 네브바
-  - 삭제 / 신고 모달창
-
-- **👩‍💻 구현 기능**
-
-  - 라우터 초기 셋팅
-  - 게시물 등록
-    - 토글 Open, Close에 따라 인풋창 높이 자동 조절
-    - api 전송 한계로 인해 한 공간에 저장하여 보낼 수 있게, 데이터를 연산자로 구분하여 한줄로 전송
-      이미지 추가 및 삭제 가능
-  - 게시글 삭제 / 신고
-    - userId를 통해 유저를 구별하여 타인의 경우 신고 기능, 본인일 경우 삭제 기능 구현
-
-- **♻️ 리팩토링**
-  - 관련 설명
-
 <br>
 
 <!-- Top Button -->
@@ -306,47 +147,10 @@ chore: 빌드 업무 수정, 패키지 매니저 설정 수정 (프로덕션 코
 
 <br>
 
-## <span id="10">✨ 10. 주요 코드</span>
+## <span id="8">🚦 11. 기술적 도전 및 이야기</span>
 
 <details>
-<summary> 주요 코드에 대한 설명을 입력하세요. </summary>
-
-<div>
-설명
-
-```jsx
-
-```
-
-</div>
-</details>
-
-<br>
-
-<details>
-<summary> 주요 코드에 대한 설명을 입력하세요. </summary>
-
-<div>
-설명
-
-```jsx
-
-```
-
-</div>
-</details>
-
-<br>
-
-<!-- Top Button -->
-<p style='background: black; width: 32px; height: 32px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-left: auto;'><a href="#top" style='color: white; '>▲</a></p>
-
-<br>
-
-## <span id="11">🚦 11. 트러블 슈팅</span>
-
-<details>
-<summary> 트러블 슈팅을 입력하세요. </summary>
+<summary> 기술적 도전 및 이야기 </summary>
 
 <div>
 
@@ -366,29 +170,13 @@ chore: 빌드 업무 수정, 패키지 매니저 설정 수정 (프로덕션 코
 
 <br>
 
-## <span id="12">12. 📝 프로젝트 회고</span>
+## <span id="9">9. 📝 앞으로 개선할 점</span>
 
-프로젝트 진행 후 느낀 점과 개선할 점을 적어주세요. 블로그에 작성하셨다면 블로그 링크를 첨부해주세요.
-
-<br>
-
-<!-- Top Button -->
-<p style='background: black; width: 32px; height: 32px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-left: auto;'><a href="#top" style='color: white; '>▲</a></p>
-
-<br>
-
-## <span id="13">13. 🛠️ 시작 가이드</span>
-
-### Installation
-
-```
-$ git clone https://github.com/MyNameSieun/OH-YO.git
-$ cd OH-YO
-$ yarn
-& yarn start
-```
+앞으로 개선할 점
 
 <br>
 
 <!-- Top Button -->
 <p style='background: black; width: 32px; height: 32px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-left: auto;'><a href="#top" style='color: white; '>▲</a></p>
+
+<br>
