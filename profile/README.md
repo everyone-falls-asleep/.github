@@ -156,9 +156,15 @@ SW사관학교 정글9기 나만의 무기 만들기 섹션에서 만든 티켓 
 
 ## <span id="6">6. 💻 주요 기능 소개</span>
 
-### 공연 등록
+<details>
+<summary> 공연 등록 </summary>
+
+<div>
 
 <img src="/images/01공연등록.gif" alt="공연등록" width="720" height="480">
+
+</div>
+</details>
 
 ### 구역 설정
 
