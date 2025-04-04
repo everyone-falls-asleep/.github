@@ -56,9 +56,9 @@ SW사관학교 정글9기 나만의 무기 만들기 섹션에서 만든 티켓 
 
 <div align="center">
 
-|          [팀장 채동현](https://github.com/donghyun-chae)           |  [팀원 김혜다](https://github.com/username2)   |           [팀원 박연우](https://github.com/yeonupark)            |             [팀원 윤효전](https://github.com/hjyoon)              |  [팀원 최지인](https://github.com/username2)   |
+|          [팀장 채동현](https://github.com/donghyun-chae)           |  [팀원 김혜다](https://github.com/hyeda)   |           [팀원 박연우](https://github.com/yeonupark)            |             [팀원 윤효전](https://github.com/hjyoon)              |  [팀원 최지인](https://github.com/jee-in)   |
 | :----------------------------------------------------------------: | :--------------------------------------------: | :--------------------------------------------------------------: | :---------------------------------------------------------------: | :--------------------------------------------: |
-| <img src="/images/donghyun.jpg" width="120px;" alt="채동현 사진"/> | <img src="" width="120px;" alt="김혜다 사진"/> | <img src="/images/yeonu.jpeg" width="120px;" alt="박연우 사진"/> | <img src="/images/hyojeon.jpg" width="120px;" alt="윤효전 사진"/> | <img src="" width="120px;" alt="최지인 사진"/> |
+| <img src="/images/donghyun.jpg" width="120px;" alt="채동현 사진"/> | <img src="https://avatars.githubusercontent.com/u/177460124?v=4" width="120px;" alt="김혜다 사진"/> | <img src="/images/yeonu.jpeg" width="120px;" alt="박연우 사진"/> | <img src="/images/hyojeon.jpg" width="120px;" alt="윤효전 사진"/> | <img src="https://avatars.githubusercontent.com/u/159971124?v=4" width="120px;" alt="최지인 사진"/> |
 
 </div>
 
